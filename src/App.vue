@@ -4,6 +4,8 @@ import { reactive, ref } from "vue";
 import axios from "axios";
 import { useToast } from "vue-toastification";
 
+let responseCard = ref<HTMLDivElement>();
+
 const form = reactive<formType>({
   body: "",
   social: "",
@@ -12,7 +14,6 @@ const form = reactive<formType>({
 });
 
 let text = ref<string>("");
-let responseCard = ref<HTMLDivElement>();
 
 async function submit() {
   form.loading = true;
@@ -63,7 +64,7 @@ async function copyText(text: string) {
 <template>
   <header>
     <nav
-      class="flex justify-between items-center bg-white px-5 py-4 md:px-10 shadow-md md:shadow-sm"
+      class="flex justify-between items-center bg-white px-5 py-4 md:px-10 shadow-lg md:shadow-sm"
     >
       <h1 class="text-2xl md:text-4xl font-bold text-slate-800">
         <span class="text-primary">&lt;</span>BioGenerator<span
@@ -72,14 +73,21 @@ async function copyText(text: string) {
         >
       </h1>
       <a
-        href=""
+        href="https://github.com/Tijanieneye10/ai-bio-generator"
         class="flex items-center px-2 py-2 md:px-5 gap-2 rounded-xl bg-primary/10"
       >
-        <img
+        <svg
           class="w-6 h-6"
-          src="src/assets/img/github-icon.svg"
-          alt="Github logo"
-        />
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clip-rule="evenodd"
+          />
+        </svg>
         <span class="text-primary max-sm:hidden">Star on Github </span>
       </a>
     </nav>
@@ -88,7 +96,9 @@ async function copyText(text: string) {
     class="container mx-auto md:mt-10 h-screen"
     :class="{ 'mb-8': form.loading }"
   >
-    <div class="md:shadow-md px-5 md:w-[70%] mx-auto bg-slate-50 py-8">
+    <div
+      class="md:shadow-md px-5 md:w-[70%] mx-auto bg-slate-50 md:bg-white md:rounded-lg py-8"
+    >
       <h2 class="text-3xl md:text-4xl font-bold text-primary text-center">
         Generate Social Media Bio with AI
       </h2>
@@ -260,9 +270,9 @@ async function copyText(text: string) {
   </main>
   <footer>
     <div
-      class="px-5 py-4 md:px-10 bg-gray-100 md:flex md:items-center md:justify-between"
+      class="px-5 py-4 md:px-10 bg-gray-100 flex max-sm:flex-col items-center justify-center md:items-center md:justify-between"
     >
-      <span class="text-sm text-black sm:text-center"
+      <span class="text-sm text-black text-center"
         >Developed 🛠 by
         <strong
           ><a href="https://twitter.com/TijaniEneye"
@@ -270,7 +280,7 @@ async function copyText(text: string) {
           </a></strong
         >
         and Powered by
-        <strong>OpenAI</strong>
+        <strong>OpenAI</strong> and <strong>Netlify</strong>
       </span>
       <div class="flex mt-4 space-x-3 sm:justify-center md:mt-0">
         <a href="#" class="text-black hover:text-gray-900">
