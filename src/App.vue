@@ -36,7 +36,7 @@ async function submit() {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer <YOUR API KEY>",
+          Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
         },
       }
     );
@@ -62,6 +62,7 @@ async function copyText(text: string) {
 </script>
 
 <template>
+  {{}}
   <header>
     <nav
       class="flex justify-between items-center bg-white px-5 py-4 md:px-10 shadow-lg md:shadow-sm"

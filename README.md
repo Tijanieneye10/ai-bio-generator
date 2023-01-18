@@ -10,7 +10,7 @@ This is built on top of OpenAi API to help generate bio by giving it a key words
 npm install
 ```
 
-generate your api key from openai and on the submit function in App.vue
+generate your api key from openai and use the .env.example to generate your own env file
 
 ### Compile and Hot-Reload for Development
 
