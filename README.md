@@ -1,6 +1,6 @@
 # Bio-Generator
 
-This is built on top of OpenAi API to help generate bio by giving it a key words of what you do.
+This is built on top of OpenAi API to help generate bio by giving it a key words of what you do. Please dont forget to give us a star 👏🏽👏🏽👏🏽
 
 ![alt App Image](src/assets/img/bio-generator.png)
 

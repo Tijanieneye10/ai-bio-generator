@@ -2,6 +2,7 @@
 import type { formType } from "@/formtype";
 import { reactive, ref } from "vue";
 import axios from "axios";
+import { useToast } from "vue-toastification";
 
 const form = reactive<formType>({
   body: "",
@@ -10,7 +11,7 @@ const form = reactive<formType>({
   char: 120,
 });
 
-let text = ref("");
+let text = ref<string>("");
 let responseCard = ref<HTMLDivElement>();
 
 async function submit() {
@@ -34,7 +35,7 @@ async function submit() {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: "Bearer <YOUR API KEY>",
         },
       }
     );
@@ -51,7 +52,8 @@ async function submit() {
 async function copyText(text: string) {
   try {
     await navigator.clipboard.writeText(text);
-    alert("Text copied successfully");
+    const toast = useToast();
+    toast.success("Bio copied successfully");
   } catch (error) {
     console.log(error);
   }
