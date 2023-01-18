@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .form-control {
+    @apply w-full focus:border-primary focus:border focus-visible:border focus-visible:border-primary rounded-lg p-2 border;
+  }
+}
